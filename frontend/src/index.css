@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.baskervville-regular {
+  font-family: "Baskervville", serif;
+  font-weight: 900;
+  font-style: normal;
+}
