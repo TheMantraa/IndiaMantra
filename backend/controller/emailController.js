@@ -72,4 +72,42 @@ const downloadEmails = (req, res) => {
   });
 };
 
-module.exports = { contactUs, saveEmail, downloadEmails };
+sendProductRecommendation = async (req, res) => {
+  const { email, imgUrl, buyUrl } = req.body;
+
+  if (!email || !imgUrl || !buyUrl) {
+    return res.status(400).json({ error: "Email and imgUrl are required." });
+  }
+
+  try {
+    const mailOptions = {
+      from: process.env.EMAIL,
+      to: email,
+      subject: `Your Perfect Tea `,
+      html: `
+        <div style="text-align: center;">
+        <a
+          href="${buyUrl}">
+          <img 
+            src="${imgUrl}" 
+            alt="Matching Tea" 
+            style="width: 100%; height: auto; display: block; margin: 0 auto;" 
+          />
+          </a>
+        </div>`,
+    };
+
+    await transporter.sendMail(mailOptions);
+    res.status(200).json({ message: "Email sent successfully!" });
+  } catch (error) {
+    console.error("Error sending email:", error);
+    res.status(500).json({ error: "Failed to send email." });
+  }
+};
+
+module.exports = {
+  contactUs,
+  saveEmail,
+  downloadEmails,
+  sendProductRecommendation,
+};
