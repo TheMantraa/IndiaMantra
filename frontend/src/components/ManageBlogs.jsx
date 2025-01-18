@@ -3,6 +3,7 @@ import axios from "axios";
 import { FaEdit, FaTrash, FaPlus } from "react-icons/fa";
 import AddBlogModal from "./AddBlogModal";
 import UpdateBlogModal from "./UpdateBlogModal";
+import DOMPurify from "dompurify";
 
 const ManageBlogs = () => {
   const [blogs, setBlogs] = useState([]);
@@ -104,6 +105,20 @@ const ManageBlogs = () => {
       });
   };
 
+  const sanitizeContent = (htmlContent) => {
+    return DOMPurify.sanitize(htmlContent); // Sanitize HTML content to prevent XSS
+  };
+
+  const getSnippet = (htmlContent, charLimit = 100) => {
+    // Create a temporary container to extract plain text from HTML
+    const tempElement = document.createElement("div");
+    tempElement.innerHTML = sanitizeContent(htmlContent);
+    const plainText = tempElement.textContent || tempElement.innerText || "";
+    return plainText.length > charLimit
+      ? `${plainText.slice(0, charLimit)}...`
+      : plainText;
+  };
+
   if (loading) {
     return (
       <div className="flex items-center justify-center h-screen">
@@ -147,10 +162,8 @@ const ManageBlogs = () => {
             />
             <div className="p-4">
               <h2 className="text-xl font-semibold mb-2">{blog.title}</h2>
-              <p className="text-gray-600 text-sm mb-4">
-                {blog.content && blog.content.length > 100
-                  ? `${blog.content.slice(0, 100)}...`
-                  : blog.content || "No content available"}
+              <p className="text-md sm:text-md text-gray-600 mt-3">
+                {getSnippet(blog.content)}
               </p>
 
               <div className="flex justify-between items-center text-gray-500 text-sm mb-4">

@@ -26,12 +26,12 @@ const BlogDetails = () => {
     }).format(new Date(dateString));
   };
 
-  const splitContent = (content) => {
-    if (!content) return [];
-    return content
-      .split(/\n\s*\n/)
-      .filter((paragraph) => paragraph.trim() !== "");
-  };
+  // const splitContent = (content) => {
+  //   if (!content) return [];
+  //   return content
+  //     .split(/\n\s*\n/)
+  //     .filter((paragraph) => paragraph.trim() !== "");
+  // };
 
   if (!blog) {
     return (
@@ -70,13 +70,10 @@ const BlogDetails = () => {
         </div>
 
         {/* Blog Content */}
-        <div className="text-gray-700 text-lg leading-relaxed space-y-6 text-justify">
-          {splitContent(blog.content).map((paragraph, index) => (
-            <p key={index} className="mb-4">
-              {paragraph}
-            </p>
-          ))}
-        </div>
+        <div
+          className="text-gray-700 text-lg leading-relaxed space-y-6 text-justify"
+          dangerouslySetInnerHTML={{ __html: blog.content }} // Renders HTML content
+        ></div>
       </div>
     </div>
   );
