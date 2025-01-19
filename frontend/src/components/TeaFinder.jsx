@@ -312,7 +312,7 @@ const TeaResult = ({ selection, teas }) => {
   const sendEmail = async (email, imgUrl, buyUrl) => {
     try {
       const response = await axios.post(
-        "http://localhost:5001/sendemail/sendproductrecommendation",
+        `${process.env.REACT_APP_BACKEND_URL}/sendemail/sendproductrecommendation`,
         {
           email,
           imgUrl: imgUrl,
