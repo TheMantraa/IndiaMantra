@@ -38,7 +38,7 @@ const Bestsellers = () => {
   const randomProducts = getRandomProducts(products);
 
   return (
-    <div className="bg-white px-4 sm:px-8 lg:px-40 py-12">
+    <div className="bg-[#eeebe9] px-4 sm:px-8 lg:px-40 py-12">
       {/* Section Title */}
       <h2 className="text-4xl font-extrabold text-[#3C0C1C] mb-6 text-center baskervville-regular">
         BEST-SELLERS
@@ -51,24 +51,24 @@ const Bestsellers = () => {
         {randomProducts.map((product) => (
           <div
             key={product._id}
-            className="bg-white shadow-sm rounded-lg overflow-hidden border border-gray-200"
+            className="bg-[#f6f5f4] rounded-lg overflow-hidden border border-gray-200"
           >
             {/* Product Image */}
             <div className="relative w-full h-64">
-                <img
-                  src={product.images[0]}
-                  alt={product.name}
-                  className="w-full h-full object-cover rounded-t-xl group-hover:scale-105 transition-transform duration-300"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-75 group-hover:opacity-50 transition duration-300"></div>
-              </div>
+              <img
+                src={product.images[0]}
+                alt={product.name}
+                className="w-full h-full object-cover rounded-t-xl group-hover:scale-105 transition-transform duration-300"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-75 group-hover:opacity-50 transition duration-300"></div>
+            </div>
 
             {/* Product Info */}
             <div className="p-4">
               <h3 className="text-lg font-medium text-[#383838] mb-1">
                 {product.name.slice(0, 25)}
               </h3>
-              <p className="text-sm text-[#383838] mb-4">₹ {product.price}</p>
+              <p className="text-sm text-[#383838] mb-4">Rs. {product.price}</p>
               <button
                 className="w-full bg-[#3C0C1C] text-sm font-medium  text-white  border border-[#383838] rounded-lg py-2 hover:bg-[#623c49] hover:text-white"
                 onClick={() => {
