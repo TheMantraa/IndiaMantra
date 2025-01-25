@@ -12,10 +12,8 @@ const RecipeModal = ({ isOpen, onRequestClose, onSubmit, initialData }) => {
   });
 
   useEffect(() => {
-    if (initialData) {
-      setFormData(initialData);
-    } else {
-      setFormData({
+    setFormData(
+      initialData || {
         title: "",
         imageUrl: "",
         introduction: "",
@@ -23,8 +21,8 @@ const RecipeModal = ({ isOpen, onRequestClose, onSubmit, initialData }) => {
         steps: [],
         benefits: [],
         faqs: [],
-      });
-    }
+      }
+    );
   }, [initialData]);
 
   const handleChange = (e) => {
@@ -32,25 +30,29 @@ const RecipeModal = ({ isOpen, onRequestClose, onSubmit, initialData }) => {
     setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
 
-  const handleArrayChange = (e, index, field, subfield) => {
-    const newArray = [...formData[field]];
-    newArray[index][subfield] = e.target.value;
-    setFormData((prevData) => ({ ...prevData, [field]: newArray }));
+  const handleArrayChange = (field, index, value, subfield) => {
+    const updatedArray = [...formData[field]];
+    if (subfield) {
+      updatedArray[index][subfield] = value;
+    } else {
+      updatedArray[index] = value;
+    }
+    setFormData((prevData) => ({ ...prevData, [field]: updatedArray }));
   };
 
   const addArrayItem = (field) => {
+    const newItem = field === "faqs" ? { question: "", answer: "" } : "";
     setFormData((prevData) => ({
       ...prevData,
-      [field]: [
-        ...prevData[field],
-        field === "faqs" ? { question: "", answer: "" } : "",
-      ],
+      [field]: [...prevData[field], newItem],
     }));
   };
 
   const removeArrayItem = (field, index) => {
-    const newArray = formData[field].filter((_, i) => i !== index);
-    setFormData((prevData) => ({ ...prevData, [field]: newArray }));
+    setFormData((prevData) => ({
+      ...prevData,
+      [field]: prevData[field].filter((_, i) => i !== index),
+    }));
   };
 
   const handleSubmit = (e) => {
@@ -63,175 +65,81 @@ const RecipeModal = ({ isOpen, onRequestClose, onSubmit, initialData }) => {
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-      <div className="bg-white p-6  w-full max-w-lg overflow-y-auto max-h-[90vh]">
-        <h2 className="text-2xl mb-4">
+      <div className="bg-white p-6 w-full max-w-lg overflow-y-auto max-h-[90vh] rounded-lg shadow-lg">
+        <h2 className="text-2xl font-bold mb-4">
           {initialData ? "Edit Recipe" : "Add Recipe"}
         </h2>
         <form onSubmit={handleSubmit}>
-          <div className="mb-4">
-            <label className="block text-gray-700">Title</label>
-            <input
-              type="text"
-              name="title"
-              value={formData.title}
-              onChange={handleChange}
-              className="w-full p-2 border rounded"
-              required
-            />
-          </div>
-          <div className="mb-4">
-            <label className="block text-gray-700">Image URL</label>
-            <input
-              type="text"
-              name="imageUrl"
-              value={formData.imageUrl}
-              onChange={handleChange}
-              className="w-full p-2 border rounded"
-              required
-            />
-          </div>
-          <div className="mb-4">
-            <label className="block text-gray-700">Introduction</label>
-            <textarea
-              name="introduction"
-              value={formData.introduction}
-              onChange={handleChange}
-              className="w-full p-2 border rounded"
-              required
-            ></textarea>
-          </div>
+          <InputField
+            label="Title"
+            name="title"
+            value={formData.title}
+            onChange={handleChange}
+            placeholder="Enter recipe title"
+            required
+          />
+          <InputField
+            label="Image URL"
+            name="imageUrl"
+            value={formData.imageUrl}
+            onChange={handleChange}
+            placeholder="Enter image URL"
+            required
+          />
+          <TextAreaField
+            label="Introduction"
+            name="introduction"
+            value={formData.introduction}
+            onChange={handleChange}
+            placeholder="Briefly introduce the recipe"
+            required
+          />
 
-          {/* Ingredients */}
-          <div className="mb-4">
-            <label className="block text-gray-700">Ingredients</label>
-            {formData.ingredients.map((ingredient, index) => (
-              <div key={index} className="flex items-center mb-2">
-                <input
-                  type="text"
-                  value={ingredient}
-                  onChange={(e) => handleArrayChange(e, index, "ingredients")}
-                  className="w-full p-2 border rounded"
-                />
-                <button
-                  type="button"
-                  onClick={() => removeArrayItem("ingredients", index)}
-                  className="ml-2 px-2 py-1 bg-red-500 text-white rounded"
-                >
-                  -
-                </button>
-              </div>
-            ))}
-            <button
-              type="button"
-              onClick={() => addArrayItem("ingredients")}
-              className="mt-2 px-4 py-2 bg-green-500 text-white rounded"
-            >
-              Add Ingredient
-            </button>
-          </div>
+          <ArrayInput
+            label="Ingredients"
+            items={formData.ingredients}
+            onChange={(index, value) =>
+              handleArrayChange("ingredients", index, value)
+            }
+            onAdd={() => addArrayItem("ingredients")}
+            onRemove={(index) => removeArrayItem("ingredients", index)}
+            placeholder="Enter ingredient"
+          />
 
-          {/* Steps */}
-          <div className="mb-4">
-            <label className="block text-gray-700">Steps</label>
-            {formData.steps.map((step, index) => (
-              <div key={index} className="flex items-center mb-2">
-                <input
-                  type="text"
-                  value={step}
-                  onChange={(e) => handleArrayChange(e, index, "steps")}
-                  className="w-full p-2 border rounded"
-                />
-                <button
-                  type="button"
-                  onClick={() => removeArrayItem("steps", index)}
-                  className="ml-2 px-2 py-1 bg-red-500 text-white rounded"
-                >
-                  -
-                </button>
-              </div>
-            ))}
-            <button
-              type="button"
-              onClick={() => addArrayItem("steps")}
-              className="mt-2 px-4 py-2 bg-green-500 text-white rounded"
-            >
-              Add Step
-            </button>
-          </div>
+          <ArrayInput
+            label="Steps"
+            items={formData.steps}
+            onChange={(index, value) =>
+              handleArrayChange("steps", index, value)
+            }
+            onAdd={() => addArrayItem("steps")}
+            onRemove={(index) => removeArrayItem("steps", index)}
+            placeholder="Enter step"
+          />
 
-          {/* Benefits */}
-          <div className="mb-4">
-            <label className="block text-gray-700">Benefits</label>
-            {formData.benefits.map((benefit, index) => (
-              <div key={index} className="flex items-center mb-2">
-                <input
-                  type="text"
-                  value={benefit}
-                  onChange={(e) => handleArrayChange(e, index, "benefits")}
-                  className="w-full p-2 border rounded"
-                />
-                <button
-                  type="button"
-                  onClick={() => removeArrayItem("benefits", index)}
-                  className="ml-2 px-2 py-1 bg-red-500 text-white rounded"
-                >
-                  -
-                </button>
-              </div>
-            ))}
-            <button
-              type="button"
-              onClick={() => addArrayItem("benefits")}
-              className="mt-2 px-4 py-2 bg-green-500 text-white rounded"
-            >
-              Add Benefit
-            </button>
-          </div>
+          <ArrayInput
+            label="Benefits"
+            items={formData.benefits}
+            onChange={(index, value) =>
+              handleArrayChange("benefits", index, value)
+            }
+            onAdd={() => addArrayItem("benefits")}
+            onRemove={(index) => removeArrayItem("benefits", index)}
+            placeholder="Enter benefit"
+          />
 
-          {/* FAQs */}
-          <div className="mb-4">
-            <label className="block text-gray-700">FAQs</label>
-            {formData.faqs.map((faq, index) => (
-              <div key={index} className="mb-2">
-                <div className="flex items-center mb-2">
-                  <input
-                    type="text"
-                    value={faq.question}
-                    onChange={(e) =>
-                      handleArrayChange(e, index, "faqs", "question")
-                    }
-                    className="w-full p-2 border rounded"
-                    placeholder="Question"
-                  />
-                  <input
-                    type="text"
-                    value={faq.answer}
-                    onChange={(e) =>
-                      handleArrayChange(e, index, "faqs", "answer")
-                    }
-                    className="w-full p-2 border rounded ml-2"
-                    placeholder="Answer"
-                  />
-                  <button
-                    type="button"
-                    onClick={() => removeArrayItem("faqs", index)}
-                    className="ml-2 px-2 py-1 bg-red-500 text-white rounded"
-                  >
-                    -
-                  </button>
-                </div>
-              </div>
-            ))}
-            <button
-              type="button"
-              onClick={() => addArrayItem("faqs")}
-              className="mt-2 px-4 py-2 bg-green-500 text-white rounded"
-            >
-              Add FAQ
-            </button>
-          </div>
+          <ArrayInput
+            label="FAQs"
+            items={formData.faqs}
+            onChange={(index, value, subfield) =>
+              handleArrayChange("faqs", index, value, subfield)
+            }
+            onAdd={() => addArrayItem("faqs")}
+            onRemove={(index) => removeArrayItem("faqs", index)}
+            isFAQ
+          />
 
-          <div className="flex justify-end">
+          <div className="flex justify-end mt-4">
             <button
               type="button"
               onClick={onRequestClose}
@@ -251,5 +159,77 @@ const RecipeModal = ({ isOpen, onRequestClose, onSubmit, initialData }) => {
     </div>
   );
 };
+
+const InputField = ({ label, ...props }) => (
+  <div className="mb-4">
+    <label className="block text-gray-700 mb-1">{label}</label>
+    <input {...props} className="w-full p-2 border rounded" />
+  </div>
+);
+
+const TextAreaField = ({ label, ...props }) => (
+  <div className="mb-4">
+    <label className="block text-gray-700 mb-1">{label}</label>
+    <textarea {...props} className="w-full p-2 border rounded"></textarea>
+  </div>
+);
+
+const ArrayInput = ({
+  label,
+  items,
+  onChange,
+  onAdd,
+  onRemove,
+  placeholder,
+  isFAQ = false,
+}) => (
+  <div className="mb-4">
+    <label className="block text-gray-700">{label}</label>
+    {items.map((item, index) => (
+      <div key={index} className="flex items-center mb-2">
+        {isFAQ ? (
+          <>
+            <input
+              type="text"
+              value={item.question}
+              onChange={(e) => onChange(index, e.target.value, "question")}
+              className="w-full p-2 border rounded"
+              placeholder="Question"
+            />
+            <input
+              type="text"
+              value={item.answer}
+              onChange={(e) => onChange(index, e.target.value, "answer")}
+              className="w-full p-2 border rounded ml-2"
+              placeholder="Answer"
+            />
+          </>
+        ) : (
+          <input
+            type="text"
+            value={item}
+            onChange={(e) => onChange(index, e.target.value)}
+            className="w-full p-2 border rounded"
+            placeholder={placeholder}
+          />
+        )}
+        <button
+          type="button"
+          onClick={() => onRemove(index)}
+          className="ml-2 px-2 py-1 bg-red-500 text-white rounded"
+        >
+          -
+        </button>
+      </div>
+    ))}
+    <button
+      type="button"
+      onClick={onAdd}
+      className="mt-2 px-4 py-2 bg-green-500 text-white rounded"
+    >
+      Add {label}
+    </button>
+  </div>
+);
 
 export default RecipeModal;

@@ -9,7 +9,7 @@ import EmailModal from "../components/EmailModal";
 import axios from "axios";
 import TeaFinder from "../components/TeaFinder";
 import SocialIcons from "../components/SocialIcons";
-
+import KnowRecipes from "../components/KnowRecipes";
 const Home = () => {
   const [showModal, setShowModal] = useState(false);
 
@@ -47,10 +47,13 @@ const Home = () => {
       {showModal && (
         <EmailModal onClose={handleCloseModal} onSubmit={handleEmailSubmit} />
       )}
+
       <Videointro />
+
+      <TeaFinder />
       <Bestsellers />
       <Categories />
-      <TeaFinder />
+      <KnowRecipes />
       <WhyUs />
       <KnowProduct />
       <TestimonialCarousel />

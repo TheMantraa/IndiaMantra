@@ -100,7 +100,7 @@ const ManageProducts = () => {
       : products.filter((product) => product.category === filter);
 
   return (
-    <div className="container mx-auto px-6 lg:px-12 ">
+    <div className=" container mx-auto px-6 lg:px-12 ">
       <div className="flex justify-end ">
         <button
           className="flex items-center bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-semibold hover:bg-blue-700 transition-colors"
@@ -111,41 +111,37 @@ const ManageProducts = () => {
       </div>
       <div className="mb-8 flex justify-center">
         <button
-          className={`px-4 py-2 mx-2 rounded-full text-sm font-semibold transition ${
-            filter === "All"
-              ? "bg-blue-600 text-white"
-              : "bg-gray-200 text-gray-800 hover:bg-gray-300"
-          }`}
+          className={`px-4 py-2 mx-2 rounded-full text-sm font-semibold transition ${filter === "All"
+            ? "bg-blue-600 text-white"
+            : "bg-gray-200 text-gray-800 hover:bg-gray-300"
+            }`}
           onClick={() => setFilter("All")}
         >
           All
         </button>
         <button
-          className={`px-4 py-2 mx-2 rounded-full text-sm font-semibold transition ${
-            filter === "Herbal Tea"
-              ? "bg-blue-600 text-white"
-              : "bg-gray-200 text-gray-800 hover:bg-gray-300"
-          }`}
+          className={`px-4 py-2 mx-2 rounded-full text-sm font-semibold transition ${filter === "Herbal Tea"
+            ? "bg-blue-600 text-white"
+            : "bg-gray-200 text-gray-800 hover:bg-gray-300"
+            }`}
           onClick={() => setFilter("HerbalTea")}
         >
           Herbal Tea
         </button>
         <button
-          className={`px-4 py-2 mx-2 rounded-full text-sm font-semibold transition ${
-            filter === "Green Tea"
-              ? "bg-blue-600 text-white"
-              : "bg-gray-200 text-gray-800 hover:bg-gray-300"
-          }`}
+          className={`px-4 py-2 mx-2 rounded-full text-sm font-semibold transition ${filter === "Green Tea"
+            ? "bg-blue-600 text-white"
+            : "bg-gray-200 text-gray-800 hover:bg-gray-300"
+            }`}
           onClick={() => setFilter("GreenTea")}
         >
           Green Tea
         </button>
         <button
-          className={`px-4 py-2 mx-2 rounded-full text-sm font-semibold transition ${
-            filter === "Black Tea"
-              ? "bg-blue-600 text-white"
-              : "bg-gray-200 text-gray-800 hover:bg-gray-300"
-          }`}
+          className={`px-4 py-2 mx-2 rounded-full text-sm font-semibold transition ${filter === "Black Tea"
+            ? "bg-blue-600 text-white"
+            : "bg-gray-200 text-gray-800 hover:bg-gray-300"
+            }`}
           onClick={() => setFilter("BlackTea")}
         >
           Black Tea

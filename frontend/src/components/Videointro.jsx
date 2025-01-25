@@ -6,7 +6,7 @@ const Videointro = () => {
     <div className="relative">
       <video
         className="w-full h-[52vh] sm:h-screen  object-cover"
-        src="Main page.mp4"
+        src="WebsiteVideo.mp4"
         loop
         muted
         autoPlay

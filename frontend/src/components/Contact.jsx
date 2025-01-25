@@ -43,21 +43,22 @@ const Contact = () => {
   return (
     <>
       <BannerImage />
-      <div className="h-auto flex items-center justify-center">
-        <form className="bg-white p-6 w-full max-w-3xl" onSubmit={handleSubmit}>
+      <div className="h-auto flex items-center justify-center bg-[#eeebe9]">
+        <form className="bg-[#eeebe9] p-6 w-full max-w-3xl" onSubmit={handleSubmit}>
           <h2 className="text-3xl font-semibold mb-6 mt-4 text-[#3C0C1C] baskervville-regular">
             We would Love To Hear From You!
           </h2>
 
-          <div className="grid grid-cols-2 gap-4 mb-4">
+          <div className="grid grid-cols-2 gap-4 mb-4 bg-[#eeebe9]">
             <div>
               <input
                 type="text"
                 name="name"
-                placeholder="Name"
+                placeholder="Name *"
                 value={formData.name}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border border-[#2B2C2D] rounded-lg shadow-sm focus:outline-none focus:ring-1 focus:ring-[#2B2C2D]"
+                className="bg-[#eeebe9] w-full px-4 py-3 border border-[#2B2C2D] rounded-lg shadow-sm focus:outline-none focus:ring-1 focus:ring-[#2B2C2D]"
+                required
               />
             </div>
             <div>
@@ -67,7 +68,7 @@ const Contact = () => {
                 placeholder="Email *"
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border border-[#2B2C2D] rounded-lg shadow-sm focus:outline-none focus:ring-1 focus:ring-[#2B2C2D]"
+                className=" bg-[#eeebe9] w-full px-4 py-3 border border-[#2B2C2D] rounded-lg shadow-sm focus:outline-none focus:ring-1 focus:ring-[#2B2C2D]"
                 required
               />
             </div>
@@ -77,28 +78,30 @@ const Contact = () => {
             <input
               type="text"
               name="phone"
-              placeholder="Phone number"
+              placeholder="Phone number *"
               value={formData.phone}
               onChange={handleChange}
-              className="w-full px-4 py-3 border border-[#2B2C2D] rounded-lg shadow-sm focus:outline-none focus:ring-1 focus:ring-[#2B2C2D]"
+              className="bg-[#eeebe9] w-full px-4 py-3 border border-[#2B2C2D] rounded-lg shadow-sm focus:outline-none focus:ring-1 focus:ring-[#2B2C2D]"
+              required
             />
           </div>
 
           <div className="mb-6">
             <textarea
               name="comment"
-              placeholder="Comment"
+              placeholder="Comment *"
               rows="4"
               value={formData.comment}
               onChange={handleChange}
-              className="w-full px-4 py-3 border border-[#2B2C2D] rounded-lg shadow-sm focus:outline-none focus:ring-1 focus:ring-[#2B2C2D]"
+              required
+              className="bg-[#eeebe9] w-full px-4 py-3 border border-[#2B2C2D] rounded-lg shadow-sm focus:outline-none focus:ring-1 focus:ring-[#2B2C2D]"
             ></textarea>
           </div>
 
           <div className="flex justify-center">
             <button
               type="submit"
-              className=" w-32  bg-[#3C0C1C] text-white font-bold px-4 py-2 rounded-xl hover:bg-[#623c49] transition duration-200 ease-in-out"
+              className=" w-32  bg-[#623c49] text-white font-bold px-4 py-2 rounded-xl hover:bg-[#3C0C1C] transition duration-200 ease-in-out"
               disabled={loading} // Disable button while loading
             >
               {loading ? "Sending..." : "Send"} {/* Button shows loader text */}

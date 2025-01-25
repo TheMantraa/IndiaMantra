@@ -31,12 +31,11 @@ const Navbar = () => {
         </Link>
 
         {/* Navigation Links */}
-        <div className="flex items-center space-x-8 text-[#D5B36B] baskervville-regular">
+        <div className="flex items-center space-x-8 text-[#ddd8d2] baskervville-regular text-lg">
           <Link
             to="/"
-            className={`font-extrabold hover:text-white ${
-              isActive("/") ? "text-white" : ""
-            }`}
+            className={`font-extrabold hover:text-[#bbb1a6] ${isActive("/") ? "text-[#bbb1a6]" : ""
+              }`}
           >
             HOME
           </Link>
@@ -48,17 +47,16 @@ const Navbar = () => {
             onMouseLeave={() => setDropdownOpen(false)}
           >
             <button
-              className={`font-bold text-[#D5B36B] hover:text-white ${
-                dropdownOpen ? "text-white" : ""
-              } uppercase`}
+              className={`font-bold text-[#ddd8d2] hover:text-[#bbb1a6] ${dropdownOpen ? "text[#bbb1a6]" : ""
+                } uppercase`}
             >
               Products
             </button>
             {dropdownOpen && (
-              <div className="absolute top-full left-0 bg-[#3C0C1C] shadow-lg rounded-md text-left z-10 w-40 border border-[#D5B36B]">
+              <div className="absolute top-full left-0 bg-[#3C0C1C] shadow-lg rounded-md text-left z-10 w-60 border border-[#bbb1a6] text-lg">
                 <button
                   onClick={() => handleCategorySelect("/products")}
-                  className="block px-4 py-3 text-sm font-semibold text-[#D5B36B] hover:text-white transition-all uppercase tracking-wide"
+                  className="block px-4 py-3 text-sm font-semibold text-[#ddd8d2] hover:text-[#bbb1a6] transition-all uppercase tracking-wide text-lg"
                 >
                   All Products
                 </button>
@@ -66,7 +64,7 @@ const Navbar = () => {
                   onClick={() =>
                     handleCategorySelect("/productscategory/GreenTea")
                   }
-                  className="block px-4 py-3 text-sm font-semibold text-[#D5B36B] hover:text-white transition-all uppercase tracking-wide"
+                  className="block px-4 py-3 text-sm font-semibold text-[#ddd8d2] hover:text-[#bbb1a6] transition-all uppercase tracking-wide text-lg"
                 >
                   Green Tea
                 </button>
@@ -74,7 +72,7 @@ const Navbar = () => {
                   onClick={() =>
                     handleCategorySelect("/productscategory/HerbalTea")
                   }
-                  className="block px-4 py-3 text-sm font-semibold text-[#D5B36B] hover:text-white transition-all uppercase tracking-wide"
+                  className="block px-4 py-3 text-sm font-semibold text-[#ddd8d2] hover:text-[#bbb1a6] transition-all uppercase tracking-wide text-lg"
                 >
                   Herbal Tea
                 </button>
@@ -82,7 +80,7 @@ const Navbar = () => {
                   onClick={() =>
                     handleCategorySelect("/productscategory/BlackTea")
                   }
-                  className="block px-4 py-3 text-sm font-semibold text-[#D5B36B] hover:text-white transition-all uppercase tracking-wide"
+                  className="block px-4 py-3 text-sm font-semibold text-[#ddd8d2] hover:text-[#bbb1a6] transition-all uppercase tracking-wide text-lg"
                 >
                   Black Tea
                 </button>
@@ -92,33 +90,29 @@ const Navbar = () => {
 
           <Link
             to="/recipes"
-            className={`font-extrabold hover:text-white ${
-              isActive("/recipes") ? "text-white" : ""
-            }`}
+            className={`font-extrabold hover:text-[#bbb1a6] ${isActive("/recipes") ? "text-[#bbb1a6]" : ""
+              }`}
           >
             RECIPES
           </Link>
           <Link
             to="/blogs"
-            className={`font-extrabold hover:text-white ${
-              isActive("/blogs") ? "text-white" : ""
-            }`}
+            className={`font-extrabold hover:text-[#bbb1a6] ${isActive("/blogs") ? "text-[#bbb1a6]" : ""
+              }`}
           >
             BLOGS
           </Link>
           <Link
             to="/our-story-vision"
-            className={`font-extrabold hover:text-white ${
-              isActive("/our-story-vision") ? "text-white" : ""
-            }`}
+            className={`font-extrabold hover:text-[#bbb1a6] ${isActive("/our-story-vision") ? "text-[#bbb1a6]" : ""
+              }`}
           >
             OUR STORY & VISION
           </Link>
           <Link
             to="/contactus"
-            className={`font-extrabold hover:text-white ${
-              isActive("/contactus") ? "text-white" : ""
-            }`}
+            className={`font-extrabold hover:text-[#bbb1a6] ${isActive("/contactus") ? "text-[#bbb1a6]" : ""
+              }`}
           >
             CONTACT US
           </Link>
@@ -127,7 +121,7 @@ const Navbar = () => {
         {/* Icons */}
         <div className="flex items-center space-x-6">
           <Link to="/adminlogin">
-            <FiUser size={20} className="text-[#D5B36B]" />
+            <FiUser size={20} className="text-[#ddd8d2]" />
           </Link>
         </div>
       </div>
@@ -139,7 +133,7 @@ const Navbar = () => {
           onClick={() => setMenuOpen(!menuOpen)}
           className="text-[#383838] focus:outline-none"
         >
-          <FiMenu size={24} className="text-[#D5B36B]" />
+          <FiMenu size={24} className="text-[#ddd8d2]" />
         </button>
 
         {/* Logo */}
@@ -153,7 +147,7 @@ const Navbar = () => {
 
         {/* Search Icon */}
         <button className="text-[#383838] focus:outline-none">
-          <FiSearch size={24} className="text-[#D5B36B]" />
+          <FiSearch size={24} className="text-[#ddd8d2]" />
         </button>
       </div>
 
@@ -162,24 +156,23 @@ const Navbar = () => {
         <div className="md:hidden bg-[#3C0C1C] baskervville-regular text-center shadow-md">
           <Link
             to="/"
-            className={`block px-4 py-2 text-sm font-bold text-[#D5B36B] hover:text-white ${
-              isActive("/") ? "text-white" : ""
-            }`}
+            className={`block px-4 py-2 text-sm font-bold text-[#ddd8d2] hover:text-white ${isActive("/") ? "text-white" : ""
+              }`}
           >
             HOME
           </Link>
           <div className="relative">
             <button
               onClick={() => setMobileDropdownOpen(!mobileDropdownOpen)}
-              className="block w-full px-4 py-2 text-sm font-bold text-[#D5B36B] hover:text-white uppercase text-center"
+              className="block w-full px-4 py-2 text-sm font-bold text-[#ddd8d2] hover:text-white uppercase text-center"
             >
               PRODUCTS
             </button>
             {mobileDropdownOpen && (
-              <div className="bg-[#3C0C1C] mx-24 rounded-md border border-[#D5B36B] flex flex-col items-center">
+              <div className="bg-[#3C0C1C] mx-24 rounded-md border border-[#ddd8d2] flex flex-col items-center">
                 <button
                   onClick={() => handleCategorySelect("/products")}
-                  className="block px-6 py-2 text-sm text-[#D5B36B] hover:text-white uppercase text-center"
+                  className="block px-6 py-2 text-sm text-[#ddd8d2] hover:text-white uppercase text-center"
                 >
                   All Products
                 </button>
@@ -187,7 +180,7 @@ const Navbar = () => {
                   onClick={() =>
                     handleCategorySelect("/productscategory/GreenTea")
                   }
-                  className="block px-6 py-2 text-sm text-[#D5B36B] hover:text-white uppercase text-center"
+                  className="block px-6 py-2 text-sm text-[#ddd8d2] hover:text-white uppercase text-center"
                 >
                   Green Tea
                 </button>
@@ -195,7 +188,7 @@ const Navbar = () => {
                   onClick={() =>
                     handleCategorySelect("/productscategory/HerbalTea")
                   }
-                  className="block px-6 py-2 text-sm text-[#D5B36B] hover:text-white uppercase text-center"
+                  className="block px-6 py-2 text-sm text-[#ddd8d2] hover:text-white uppercase text-center"
                 >
                   Herbal Tea
                 </button>
@@ -203,7 +196,7 @@ const Navbar = () => {
                   onClick={() =>
                     handleCategorySelect("/productscategory/BlackTea")
                   }
-                  className="block px-6 py-2 text-sm text-[#D5B36B] hover:text-white uppercase text-center"
+                  className="block px-6 py-2 text-sm text-[#ddd8d2] hover:text-white uppercase text-center"
                 >
                   Black Tea
                 </button>
@@ -212,25 +205,22 @@ const Navbar = () => {
           </div>
           <Link
             to="/recipes"
-            className={`block px-4 py-2 text-sm font-bold text-[#D5B36B] hover:text-white ${
-              isActive("/recipes") ? "text-white" : ""
-            }`}
+            className={`block px-4 py-2 text-sm font-bold text-[#ddd8d2] hover:text-white ${isActive("/recipes") ? "text-white" : ""
+              }`}
           >
             RECIPES
           </Link>
           <Link
             to="/blogs"
-            className={`block px-4 py-2 text-sm font-bold text-[#D5B36B] hover:text-white ${
-              isActive("/blogs") ? "text-white" : ""
-            }`}
+            className={`block px-4 py-2 text-sm font-bold text-[#ddd8d2] hover:text-white ${isActive("/blogs") ? "text-white" : ""
+              }`}
           >
             BLOGS
           </Link>
           <Link
             to="/contactus"
-            className={`block px-4 py-2 text-sm font-bold text-[#D5B36B] hover:text-white ${
-              isActive("/contactus") ? "text-white" : ""
-            }`}
+            className={`block px-4 py-2 text-sm font-bold text-[#ddd8d2] hover:text-white ${isActive("/contactus") ? "text-white" : ""
+              }`}
           >
             CONTACT US
           </Link>

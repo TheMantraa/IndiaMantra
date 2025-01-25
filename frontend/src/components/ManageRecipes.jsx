@@ -59,7 +59,7 @@ const ManageRecipes = () => {
 
   const handleDeleteRecipe = (recipeId) => {
     const confirmDelete = window.confirm(
-      "Are you sure you want to delete this product?"
+      "Are you sure you want to delete this recipe?"
     );
     if (!confirmDelete) return;
     axios

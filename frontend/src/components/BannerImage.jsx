@@ -5,7 +5,7 @@ const BannerImage = () => {
     <div>
       <img
         className="w-full h-96 object-cover"
-        src="https://themantra.ca/cdn/shop/files/AGuideToBuying_UsingMustardSeeds.jpg?v=1727782182&width=2000"
+        src="https://res.cloudinary.com/dxyuojydi/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1736932411/pexels-quang-nguyen-vinh-222549-11669663_mqjcoe.jpg"
         alt="Not Found"
       />
     </div>

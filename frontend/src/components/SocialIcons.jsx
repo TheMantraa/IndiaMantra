@@ -10,7 +10,7 @@ const SocialIcons = () => {
         rel="noopener noreferrer"
         className="block mb-2"
       >
-        <FaFacebook size={30} className="text-white  hover:text-[#ecb640]" />
+        <FaFacebook size={30} className="text-[#ddd8d2] hover:text-[#bbb1a6]]" />
       </a>
       <a
         href="https://www.instagram.com/the._mantra?igsh=bmY1bW83aHFoeXVk"
@@ -18,7 +18,7 @@ const SocialIcons = () => {
         rel="noopener noreferrer"
         className="block mb-2"
       >
-        <FaInstagram size={30} className="text-white  hover:text-[#ecb640]" />
+        <FaInstagram size={30} className="text-[#ddd8d2] hover:text-[#bbb1a6]" />
       </a>
       <a
         href="https://in.pinterest.com/the_mantraa/?invite_code=3b5301c746844a47a6af9002ed5472a2&sender=1145532992626882410"
@@ -26,7 +26,7 @@ const SocialIcons = () => {
         rel="noopener noreferrer"
         className="block"
       >
-        <FaPinterest size={30} className="text-white  hover:text-[#ecb640]" />
+        <FaPinterest size={30} className="text-[#ddd8d2] hover:text-[#bbb1a6]" />
       </a>
     </div>
   );

@@ -142,7 +142,7 @@ const ManageBlogs = () => {
       <div className="flex justify-end mb-4">
         <button
           onClick={() => setIsModalOpen(true)}
-          className="flex items-center bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-semibold hover:bg-blue-700 transition-colors"
+          className="flex items-center bg-blue-600 text-[#bbb1a6] px-4 py-2 rounded-md text-sm font-semibold hover:bg-blue-700 transition-colors"
         >
           <FaPlus className="mr-2" /> Add Blog
         </button>

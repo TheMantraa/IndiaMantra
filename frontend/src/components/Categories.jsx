@@ -9,7 +9,7 @@ const Categories = () => {
       <div className="bg-[#623c49] py-10">
         {/* Heading */}
         <div className="text-center mb-10">
-          <h1 className="text-4xl font-extrabold mb-6 baskervville-regular text-[#D5B36B]">
+          <h1 className="text-4xl font-extrabold mb-6 baskervville-regular text-[#ddd8d2]">
             CHOOSE YOUR TEA
           </h1>
         </div>
@@ -23,7 +23,7 @@ const Categories = () => {
                 <img
                   src="https://res.cloudinary.com/dxyuojydi/image/upload/v1736171235/WhatsApp_Image_2025-01-06_at_19.06.03_1_qljc9t.jpg"
                   alt="Green Tea"
-                  className="w-full h-full object-cover rounded-full border-2 p-2 border-[#D5B36B]"
+                  className="w-full h-full object-cover rounded-full border-2 p-2 border-[#bbb1a6]"
                 />
                 <div
                   className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center"
@@ -42,7 +42,7 @@ const Categories = () => {
                 <img
                   src="https://res.cloudinary.com/dxyuojydi/image/upload/v1736171235/WhatsApp_Image_2025-01-06_at_19.06.03_xzjiue.jpg"
                   alt="Black Tea"
-                  className="w-full h-full object-cover rounded-full border-2 p-2 border-[#D5B36B]"
+                  className="w-full h-full object-cover rounded-full border-2 p-2 border-[#bbb1a6]"
                 />
                 <div
                   className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center"
@@ -61,7 +61,7 @@ const Categories = () => {
                 <img
                   src="https://res.cloudinary.com/dxyuojydi/image/upload/v1736171235/WhatsApp_Image_2025-01-06_at_19.06.05_ugxtqf.jpg"
                   alt="Herbal Tea"
-                  className="w-full h-full object-cover rounded-full border-2 p-2 border-[#D5B36B]"
+                  className="w-full h-full object-cover rounded-full border-2 p-2 border-[#bbb1a6]"
                 />
                 <div
                   className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center"
@@ -79,7 +79,7 @@ const Categories = () => {
         {/* Button Section */}
         <div className="text-center mt-10">
           <button
-            className="bg-[#ecb640] text-white font-bold py-2 px-6 rounded-lg text-xl hover:bg-[#b59c36] transition duration-300 shadow-lg"
+            className="bg-[#ddd8d2] text-gray-800 font-bold py-2 px-6 rounded-lg text-xl hover:bg-[#bbb1a6] transition duration-300 shadow-lg"
             onClick={() => navigate("/products")}
           >
             View Our Products

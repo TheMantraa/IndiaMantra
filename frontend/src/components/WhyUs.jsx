@@ -2,7 +2,7 @@ import React from "react";
 
 const WhyUs = () => {
   return (
-    <div className="bg-white py-12">
+    <div className="bg-[#eeebe9] py-12">
       <div className="text-center mb-10 px-4 md:px-12 lg:px-32">
         <h2 className="lg:text-3xl md:text-3xl font-extrabold mb-2 text-[#3C0C1C] baskervville-regular ">
           WHY MANTRA?

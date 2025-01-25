@@ -34,7 +34,7 @@ const Products = () => {
       : products.filter((product) => product.category === filter);
 
   return (
-    <div className="container mx-auto py-2 px-6 lg:px-12 bg-white ">
+    <div className="container mx-auto py-2 px-6 lg:px-12 bg-[#eeebe9] ">
       <h1 className=" mt-4 text-4xl font-extrabold text-center mb-4 text-[#3C0C1C] tracking-wide baskervville-regular">
         DISCOVER THE WORLD OF TEA
       </h1>
@@ -46,41 +46,37 @@ const Products = () => {
 
       <div className="mb-8 flex justify-center">
         <button
-          className={`px-4 py-2 mx-2 rounded-full text-sm font-semibold transition ${
-            filter === "All"
-              ? "bg-[#623c49] text-white"
-              : "bg-[#a07584] text-white hover:bg-[#765460]"
-          }`}
+          className={`px-4 py-2 mx-2 rounded-full text-sm font-semibold transition ${filter === "All"
+            ? "bg-[#623c49] text-white"
+            : "bg-[#a07584] text-white hover:bg-[#765460]"
+            }`}
           onClick={() => setFilter("All")}
         >
           All
         </button>
         <button
-          className={`px-4 py-2 mx-2 rounded-full text-sm font-semibold transition ${
-            filter === "HerbalTea"
-              ? "bg-[#623c49] text-white"
-              : "bg-[#a07584] text-white hover:bg-[#765460]"
-          }`}
+          className={`px-4 py-2 mx-2 rounded-full text-sm font-semibold transition ${filter === "HerbalTea"
+            ? "bg-[#623c49] text-white"
+            : "bg-[#a07584] text-white hover:bg-[#765460]"
+            }`}
           onClick={() => setFilter("HerbalTea")}
         >
           Herbal Tea
         </button>
         <button
-          className={`px-4 py-2 mx-2 rounded-full text-sm font-semibold transition ${
-            filter === "GreenTea"
-              ? "bg-[#623c49] text-white"
-              : "bg-[#a07584] text-white hover:bg-[#765460]"
-          }`}
+          className={`px-4 py-2 mx-2 rounded-full text-sm font-semibold transition ${filter === "GreenTea"
+            ? "bg-[#623c49] text-white"
+            : "bg-[#a07584] text-white hover:bg-[#765460]"
+            }`}
           onClick={() => setFilter("GreenTea")}
         >
           Green Tea
         </button>
         <button
-          className={`px-4 py-2 mx-2 rounded-full text-sm font-semibold transition ${
-            filter === "BlackTea"
-              ? "bg-[#623c49] text-white"
-              : "bg-[#a07584] text-white hover:bg-[#765460]"
-          }`}
+          className={`px-4 py-2 mx-2 rounded-full text-sm font-semibold transition ${filter === "BlackTea"
+            ? "bg-[#623c49] text-white"
+            : "bg-[#a07584] text-white hover:bg-[#765460]"
+            }`}
           onClick={() => setFilter("BlackTea")}
         >
           Black Tea
@@ -96,7 +92,7 @@ const Products = () => {
           {filteredProducts.map((product) => (
             <div
               key={product._id}
-              className="group bg-white rounded-xl shadow-lg hover:shadow-2xl transition duration-300 ease-in-out cursor-pointer border border-gray-200 overflow-hidden relative"
+              className="group bg-[#f6f5f4] rounded-xl shadow-lg hover:shadow-2xl transition duration-300 ease-in-out cursor-pointer border border-gray-200 overflow-hidden relative"
             >
               <div className="relative w-full h-64">
                 <img

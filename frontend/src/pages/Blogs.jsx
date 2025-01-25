@@ -37,7 +37,7 @@ const Blogs = () => {
   };
 
   return (
-    <div className="py-8 px-4">
+    <div className="py-8 px-4 bg-[#eeebe9]">
       <div className="max-w-6xl mx-auto">
         <h1 className="text-4xl font-extrabold mb-8 text-[#3C0C1C] sm:text-left baskervville-regular">
           BLOGS

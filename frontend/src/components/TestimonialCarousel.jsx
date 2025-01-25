@@ -3,7 +3,7 @@ import { FaStar } from "react-icons/fa";
 
 const TestimonialCarousel = () => {
   return (
-    <section className="text-gray-600 body-font bg-white">
+    <section className="text-gray-600 body-font bg-[#eeebe9]">
       <div className="px-5 py-16 lg:mx-32">
         <h1 className="text-3xl font-extrabold text-center text-gray-800 mb-12 baskervville-regular">
           MANTRA MOMENTS : YOUR EXPERIENCES

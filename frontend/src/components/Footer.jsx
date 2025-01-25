@@ -18,7 +18,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center sm:text-left">
           {/* About Us Section */}
           <div>
-            <h3 className="text-white text-2xl font-semibold ">About Us</h3>
+            <h3 className="text-[#ddd8d2]  text-2xl font-semibold ">About Us</h3>
             <ul className="mt-4 text-md space-y-2">
               {/* <li>
                 <Link
@@ -31,7 +31,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/our-story-vision"
-                  className="hover:text-[#D5B36B] transition-colors"
+                  className="text-[#ddd8d2] hover:text-[#bbb1a6] transition-colors"
                 >
                   Our Mission & Values
                 </Link>
@@ -39,7 +39,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/blogs"
-                  className="hover:text-[#D5B36B] transition-colors"
+                  className="text-[#ddd8d2] hover:text-[#bbb1a6] transition-colors"
                 >
                   Blogs
                 </Link>
@@ -48,7 +48,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/contactus"
-                  className="hover:text-[#D5B36B] transition-colors"
+                  className="text-[#ddd8d2] hover:text-[#bbb1a6] transition-colors"
                 >
                   Contact Us
                 </Link>
@@ -58,17 +58,17 @@ const Footer = () => {
 
           {/* Quick Links Section */}
           <div>
-            <h3 className="text-white text-2xl font-semibold">Quick Links</h3>
+            <h3 className="text-[#ddd8d2] text-2xl font-semibold">Quick Links</h3>
             <ul className="mt-4 text-md space-y-2">
               <li>
-                <Link to="/" className="hover:text-[#D5B36B] transition-colors">
+                <Link to="/" className="text-[#ddd8d2] hover:text-[#bbb1a6] transition-colors">
                   Home
                 </Link>
               </li>
               <li>
                 <Link
                   to="/products"
-                  className="hover:text-[#D5B36B] transition-colors"
+                  className="text-[#ddd8d2] hover:text-[#bbb1a6] transition-colors"
                 >
                   Products
                 </Link>
@@ -76,7 +76,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/recipes"
-                  className="hover:text-[#D5B36B] transition-colors"
+                  className="text-[#ddd8d2] hover:text-[#bbb1a6] transition-colors"
                 >
                   Recipe
                 </Link>
@@ -86,33 +86,34 @@ const Footer = () => {
                   Testimonials
                 </Link>
               </li> */}
+
             </ul>
           </div>
 
           {/* Get in Touch Section */}
           <div>
-            <h3 className="text-white text-2xl font-semibold">Get in Touch</h3>
+            <h3 className="text-[#ddd8d2] text-2xl font-semibold">Get in Touch</h3>
             <ul className="mt-4 space-y-2 text-md">
-              <li className="hover:text-[#D5B36B] transition-colors">
-                <FaHome className="inline-block" /> India & Canada
+              <li className="text-[#ddd8d2] hover:text-[#bbb1a6] transition-colors">
+                <FaHome className="text-[#ddd8d2] inline-block" /> India & Canada
               </li>
-              <li className="hover:text-[#D5B36B] transition-colors">
-                <MdEmail className="inline-block" /> info@themantra.ca
+              <li className="text-[#ddd8d2] hover:text-[#bbb1a6] transition-colors">
+                <MdEmail className="text-[#ddd8d2] inline-block" /> info@themantra.ca
               </li>
-              <li className="hover:text-[#D5B36B] transition-colors">
-                <FaClock className="inline-block" /> Mon-Fri: 9:00 AM – 6:00 PM
+              <li className="text-[#ddd8d2] hover:text-[#bbb1a6] transition-colors">
+                <FaClock className="text-[#ddd8d2] inline-block" /> Mon-Fri: 9:00 AM – 6:00 PM
               </li>
             </ul>
           </div>
 
           {/* Follow Us Section */}
           <div>
-            <h3 className="text-white text-2xl font-semibold">Follow Us</h3>
+            <h3 className="text-[#ddd8d2] text-2xl font-semibold">Follow Us</h3>
             <ul className="mt-4 space-y-2">
               <li className="flex justify-center sm:justify-start gap-4">
                 <a
                   href="https://www.facebook.com/profile.php?id=61567152969589&mibextid=ZbWKwL"
-                  className="text-white hover:text-[#D5B36B] text-2xl transition-colors"
+                  className="text-[#ddd8d2] hover:text-[#bbb1a6] text-2xl transition-colors"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -120,7 +121,7 @@ const Footer = () => {
                 </a>
                 <a
                   href="https://www.instagram.com/the._mantra?igsh=bmY1bW83aHFoeXVk"
-                  className="text-white hover:text-[#D5B36B] text-2xl transition-colors"
+                  className="text-[#ddd8d2] hover:text-[#bbb1a6] text-2xl transition-colors"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -128,7 +129,7 @@ const Footer = () => {
                 </a>
                 <a
                   href="https://in.pinterest.com/the_mantraa/?invite_code=3b5301c746844a47a6af9002ed5472a2&sender=1145532992626882410"
-                  className="text-white hover:text-[#D5B36B] text-2xl transition-colors"
+                  className="text-[#ddd8d2] hover:text-[#bbb1a6] text-2xl transition-colors"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -136,7 +137,7 @@ const Footer = () => {
                 </a>
                 <a
                   href="https://www.linkedin.com/"
-                  className="text-white hover:text-[#D5B36B] text-2xl transition-colors"
+                  className="text-[#ddd8d2] hover:text-[#bbb1a6] text-2xl transition-colors"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -145,7 +146,7 @@ const Footer = () => {
 
                 <a
                   href="https://www.youtube.com/"
-                  className="text-white hover:text-[#D5B36B] text-2xl transition-colors"
+                  className="text-[#ddd8d2] hover:text-[#bbb1a6] text-2xl transition-colors"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -157,7 +158,7 @@ const Footer = () => {
         </div>
 
         {/* Footer Bottom */}
-        <div className="border-t border-gray-700 mt-8 pt-4 text-sm text-center">
+        <div className="text-[#ddd8d2] border-t border-gray-700 mt-8 pt-4 text-sm text-center">
           <p>
             Copyright © 2025, Sara Consultancy ·{" "}
             <Link to="/privacy" className="bold hover:underline">

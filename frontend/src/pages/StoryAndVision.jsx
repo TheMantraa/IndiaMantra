@@ -2,7 +2,7 @@ import React from "react";
 
 const StoryAndVision = () => {
   return (
-    <div className="bg-gray-50 px-4 sm:px-6 lg:px-16 py-12">
+    <div className="bg-[#eeebe9] px-4 sm:px-6 lg:px-16 py-12">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#3C0C1C] mb-8 text-center baskervville-regular ">
           OUR STORY & VISION
