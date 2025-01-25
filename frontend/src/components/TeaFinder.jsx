@@ -269,7 +269,7 @@ const StepContent = ({
           </div>
           <div className="flex flex-col items-center">
             <img
-              src="https://res.cloudinary.com/dxyuojydi/image/upload/v1736933970/Untitled_design__26_-removebg-preview_i5ly0a.png"
+              src="https://res.cloudinary.com/dxyuojydi/image/upload/v1736932411/Untitled_design__26_-removebg-preview_i5ly0a.png"
               alt="Tea Cup"
               className="w-[20rem] h-[20rem] object-contain"
             />
