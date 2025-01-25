@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { DndProvider, useDrag, useDrop } from "react-dnd";
 import { MultiBackend } from "react-dnd-multi-backend";
 import { HTML5toTouch } from "rdndmb-html5-to-touch";
+import { FaAmazon } from "react-icons/fa";
+import axios from "axios";
 
 const healthConcerns = [
   "Relax and Unwind",
@@ -52,13 +54,19 @@ const teas = [
     benefits: ["Stress Reduction"],
     flavors: ["Fruity"],
     tagline: "Sweet chamomile serenity with a hint of fruity bliss.",
+    buyUrl: "https://www.amazon.com/dp/B0DPJBFQ6Q",
+    imgUrl:
+      "https://res.cloudinary.com/dxyuojydi/image/upload/v1737106114/IMG_8278_xe7tb7.png",
   },
   {
     name: "Stress Relief Tea",
     type: "Green Tea",
     benefits: ["Stress Reduction", "Energy Boost", "Digestive Support"],
-    flavors: ["Minty", "Fruity", "Fruity"],
+    flavors: ["Minty", "Fruity", "Spicy"],
     tagline: "Soothe your digestion with the refreshing cool of mint.",
+    buyUrl: "https://www.amazon.com/dp/B0DPJF96B9",
+    imgUrl:
+      "https://res.cloudinary.com/dxyuojydi/image/upload/v1737106114/IMG_8279_ghk4xr.png",
   },
   {
     name: "Hibiscus Tea",
@@ -66,6 +74,9 @@ const teas = [
     benefits: ["Energy Boost"],
     flavors: ["Fruity"],
     tagline: "A fruity burst of hibiscus to awaken your inner vigor.",
+    buyUrl: "https://www.amazon.com/dp/B0DPJG2LJC",
+    imgUrl:
+      "https://res.cloudinary.com/dxyuojydi/image/upload/v1737106114/IMG_8280_tqv4ww.png",
   },
   {
     name: "English Breakfast Tea",
@@ -73,13 +84,19 @@ const teas = [
     benefits: ["Digestive Support", "Energy Boost", "Stress Reduction"],
     flavors: ["Spicy", "Minty"],
     tagline: "Start your day with a warm, spiced boost for better digestion",
+    buyUrl: "https://www.amazon.com/dp/B0DPJFDHN8",
+    imgUrl:
+      "https://res.cloudinary.com/dxyuojydi/image/upload/v1737106115/IMG_8281_c83yyp.png",
   },
   {
     name: "Lemon Ginger Black Pepper Stevia",
     type: "Herbal Tea",
-    benefits: ["Digestive Support", "Stress Reduction"],
+    benefits: ["Digestive Support", "Stress Reduction", "Energy Boost"],
     flavors: ["Spicy"],
     tagline: "A spicy kick to keep your digestion in perfect harmony.",
+    buyUrl: "https://www.amazon.com/dp/B0DPJFFVFB",
+    imgUrl:
+      "https://res.cloudinary.com/dxyuojydi/image/upload/v1737106114/IMG_8282_lfix5r.png",
   },
   {
     name: "Nature’s Cleanse",
@@ -87,6 +104,9 @@ const teas = [
     benefits: ["Digestive Support"],
     flavors: ["Fruity"],
     tagline: "Natural fruity goodness for a gentle digestive detox.",
+    buyUrl: "https://www.amazon.com/dp/B0DPJF21W6",
+    imgUrl:
+      "https://res.cloudinary.com/dxyuojydi/image/upload/v1737106115/IMG_8283_ibomit.png",
   },
   {
     name: "Earl Grey",
@@ -94,6 +114,9 @@ const teas = [
     benefits: ["Digestive Support", "Energy Boost", "Stress Reduction"],
     flavors: ["Minty", "Fruity", "Spicy"],
     tagline: "A refreshing twist of mint to support your digestive balance.",
+    buyUrl: "https://www.amazon.com/dp/B0DPJGD269",
+    imgUrl:
+      "https://res.cloudinary.com/dxyuojydi/image/upload/v1737106114/IMG_8284_rij0aw.png",
   },
   {
     name: "Spearmint Tea",
@@ -101,6 +124,9 @@ const teas = [
     benefits: ["Digestive Support", "Stress Reduction"],
     flavors: ["Minty"],
     tagline: "Refresh your digestion with the cooling touch of spearmint.",
+    buyUrl: "https://www.amazon.com/dp/B0DPJG4QCZ",
+    imgUrl:
+      "https://res.cloudinary.com/dxyuojydi/image/upload/v1737106116/IMG_8285_pb8q4g.png",
   },
   {
     name: "Peppermint Pure",
@@ -108,6 +134,9 @@ const teas = [
     benefits: ["Energy Boost"],
     flavors: ["Minty"],
     tagline: "Pure peppermint power to fuel your day with energy.",
+    buyUrl: "https://www.amazon.com/dp/B0DPJDQLGZ",
+    imgUrl:
+      "https://res.cloudinary.com/dxyuojydi/image/upload/v1737106114/IMG_8286_bn8v0h.png",
   },
 ];
 
@@ -126,14 +155,14 @@ const TeaFinder = () => {
   return (
     <div className="relative py-8">
       <img
-        src="https://res.cloudinary.com/dxyuojydi/image/upload/v1735888229/WhatsApp_Image_2025-01-03_at_11.58.43_eoa9nr.jpg"
+        src="https://res.cloudinary.com/dxyuojydi/image/upload/v1736932411/pexels-quang-nguyen-vinh-222549-11669663_mqjcoe.jpg"
         alt=""
         className="absolute inset-0 w-full h-full object-cover z-[-10]"
       />
       <DndProvider backend={MultiBackend} options={HTML5toTouch}>
         <div className="relative z-10 p-1 flex flex-col items-center text-center">
           <h1 className="text-4xl font-extrabold mb-6 text-[#4f2432] baskervville-regular">
-            GAMIFIED TEA FINDER
+            Play-and-Discover your perfect tea
           </h1>
           <p className="text-[#4f2432] mb-4 text-lg font-extrabold baskervville-regular">
             Step {step} of 5
@@ -168,7 +197,7 @@ const StepContent = ({
   teaTypes,
 }) => {
   const questions = [
-    "Tell Us What You Need\nDrag & drop your tea goal in cup! 🍵✨",
+    "Drag & drop your tea goal in cup!",
     "Pick Your Favorite Flavor\nWhat kind of taste do you enjoy in your tea?",
     "Choose Your Tea Type\nWhat’s your tea base of choice?",
     "Enter Your Email to Unlock More Benefits\nTo reveal your tea match and receive updates, enter your email.",
@@ -230,7 +259,7 @@ const StepContent = ({
           <Droppable onDrop={handleDrop}>
             <div className="flex flex-col items-center">
               <img
-                src="https://res.cloudinary.com/dxyuojydi/image/upload/v1735888567/png-clipart-hot-coffee-art-coffee-cup-cafe-coffee-tea-coffee-thumbnail-removebg-preview_uz9kou.png"
+                src="https://res.cloudinary.com/dxyuojydi/image/upload/v1736933970/Untitled_design__26_-removebg-preview_i5ly0a.png"
                 alt=""
               />
             </div>
@@ -280,27 +309,56 @@ const TeaResult = ({ selection, teas }) => {
       tea.type === selection.teaType[0]
   );
 
-  // console.log("Selection:", selection);
-  // console.log("Matching Teas:", matchingTeas);
+  const sendEmail = async (email, imgUrl, buyUrl) => {
+    try {
+      const response = await axios.post(
+        `${process.env.REACT_APP_BACKEND_URL}/sendemail/sendproductrecommendation`,
+        {
+          email,
+          imgUrl: imgUrl,
+          buyUrl: buyUrl,
+        }
+      );
 
+      if (response.status === 200) {
+        console.log("Email sent successfully!");
+      } else {
+        console.log("Error sending email");
+      }
+    } catch (error) {
+      console.error("Error sending email:", error);
+      alert("An error occurred while sending the email.");
+    }
+  };
+  if (selection.email && matchingTeas.length > 0) {
+    sendEmail(selection.email, matchingTeas[0].imgUrl, matchingTeas[0].buyUrl);
+  }
   return (
-    <div className="my- text-center">
+    <div className="my- text-center baskervville-regular ">
       <h2 className="text-3xl font-extrabold text-[#4f2432] mb-1 baskervville-regular">
         YOUR PERFECT TEA
       </h2>
       {matchingTeas.length > 0 ? (
-        matchingTeas.map((tea) => (
+        matchingTeas.slice(0, 1).map((tea) => (
           <div
             key={tea.name}
             className="p-6 bg-black opacity-60 rounded-lg mt-4 shadow-lg max-w-md mx-auto"
           >
-            <h3 className="text-2xl font-extrabold text-white mb-2">
+            <h3 className="text-3xl font-extrabold text-white mb-2">
               {tea.name}
             </h3>
 
-            <p className=" text-white mb-1">
-              <span className="font-bold text-lg"></span> {tea.tagline}
+            <p className="text-white mb-1">
+              <span className="font-bold text-2xl"></span> {tea.tagline}
             </p>
+            <a
+              href={tea.buyUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center  text-2xl font-bold justify-center gap-2 text-white  mt-4"
+            >
+              <FaAmazon size={28} /> <span>Buy Here</span>
+            </a>
           </div>
         ))
       ) : (

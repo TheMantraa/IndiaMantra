@@ -11,6 +11,7 @@
     "ajv-keywords": "^5.1.0",
     "axios": "^1.7.9",
     "dnd-multi-backend": "^8.1.2",
+    "dompurify": "^3.2.3",
     "rdndmb-html5-to-touch": "^8.1.2",
     "react": "^19.0.0",
     "react-dnd": "^16.0.1",

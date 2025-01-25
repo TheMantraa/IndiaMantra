@@ -20,14 +20,14 @@ const Footer = () => {
           <div>
             <h3 className="text-white text-2xl font-semibold ">About Us</h3>
             <ul className="mt-4 text-md space-y-2">
-              <li>
+              {/* <li>
                 <Link
                   to="/our-story-vision"
                   className="hover:text-[#D5B36B] transition-colors"
                 >
                   About The Mantra
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link
                   to="/our-story-vision"
@@ -81,11 +81,11 @@ const Footer = () => {
                   Recipe
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link to="/" className="hover:text-[#D5B36B] transition-colors">
                   Testimonials
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </div>
 
