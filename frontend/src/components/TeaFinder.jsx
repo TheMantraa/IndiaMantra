@@ -54,7 +54,7 @@ const teas = [
     tagline: "Sweet chamomile serenity with a hint of fruity bliss.",
     buyUrl: "https://www.amazon.com/dp/B0DPJBFQ6Q",
     imgUrl:
-      "https://res.cloudinary.com/dxyuojydi/image/upload/v1737106114/IMG_8278_xe7tb7.png",
+      "https://res.cloudinary.com/dxyuojydi/image/upload/v1735284247/1_krhxkq.png",
   },
   {
     name: "Stress Relief Tea",
@@ -64,7 +64,7 @@ const teas = [
     tagline: "Soothe your digestion with the refreshing cool of mint.",
     buyUrl: "https://www.amazon.com/dp/B0DPJF96B9",
     imgUrl:
-      "https://res.cloudinary.com/dxyuojydi/image/upload/v1737106114/IMG_8279_ghk4xr.png",
+      "https://res.cloudinary.com/dxyuojydi/image/upload/v1737470475/stress_relief_tea_1_bbspil.png",
   },
   {
     name: "Hibiscus Tea",
@@ -74,7 +74,7 @@ const teas = [
     tagline: "A fruity burst of hibiscus to awaken your inner vigor.",
     buyUrl: "https://www.amazon.com/dp/B0DPJG2LJC",
     imgUrl:
-      "https://res.cloudinary.com/dxyuojydi/image/upload/v1737106114/IMG_8280_tqv4ww.png",
+      "https://res.cloudinary.com/dxyuojydi/image/upload/v1737470047/Hibiscus_tea_1_vzidwm.png",
   },
   {
     name: "English Breakfast Tea",
@@ -84,7 +84,7 @@ const teas = [
     tagline: "Start your day with a warm, spiced boost for better digestion",
     buyUrl: "https://www.amazon.com/dp/B0DPJFDHN8",
     imgUrl:
-      "https://res.cloudinary.com/dxyuojydi/image/upload/v1737106115/IMG_8281_c83yyp.png",
+      "https://res.cloudinary.com/dxyuojydi/image/upload/v1737469828/English_breakfast_tea_1_l9evdf.png",
   },
   {
     name: "Lemon Ginger Black Pepper Stevia",
@@ -94,7 +94,7 @@ const teas = [
     tagline: "A spicy kick to keep your digestion in perfect harmony.",
     buyUrl: "https://www.amazon.com/dp/B0DPJFFVFB",
     imgUrl:
-      "https://res.cloudinary.com/dxyuojydi/image/upload/v1737106114/IMG_8282_lfix5r.png",
+      "https://res.cloudinary.com/dxyuojydi/image/upload/v1737470107/lemon_ginger_tea_1_kcirrl.png",
   },
   {
     name: "Nature’s Cleanse",
@@ -104,7 +104,7 @@ const teas = [
     tagline: "Natural fruity goodness for a gentle digestive detox.",
     buyUrl: "https://www.amazon.com/dp/B0DPJF21W6",
     imgUrl:
-      "https://res.cloudinary.com/dxyuojydi/image/upload/v1737106115/IMG_8283_ibomit.png",
+      "https://res.cloudinary.com/dxyuojydi/image/upload/v1737470262/Nature_cleanse_tea_1_ayoubc.png",
   },
   {
     name: "Earl Grey",
@@ -114,7 +114,7 @@ const teas = [
     tagline: "A refreshing twist of mint to support your digestive balance.",
     buyUrl: "https://www.amazon.com/dp/B0DPJGD269",
     imgUrl:
-      "https://res.cloudinary.com/dxyuojydi/image/upload/v1737106114/IMG_8284_rij0aw.png",
+      "https://res.cloudinary.com/dxyuojydi/image/upload/v1737470865/English_breakfast_tea_z3rbrx.png",
   },
   {
     name: "Spearmint Tea",
@@ -124,7 +124,7 @@ const teas = [
     tagline: "Refresh your digestion with the cooling touch of spearmint.",
     buyUrl: "https://www.amazon.com/dp/B0DPJG4QCZ",
     imgUrl:
-      "https://res.cloudinary.com/dxyuojydi/image/upload/v1737106116/IMG_8285_pb8q4g.png",
+      "https://res.cloudinary.com/dxyuojydi/image/upload/v1737470403/Spearmint_tea_2_ovfvdm.png",
   },
   {
     name: "Peppermint Pure",
@@ -134,7 +134,7 @@ const teas = [
     tagline: "Pure peppermint power to fuel your day with energy.",
     buyUrl: "https://www.amazon.com/dp/B0DPJDQLGZ",
     imgUrl:
-      "https://res.cloudinary.com/dxyuojydi/image/upload/v1737106114/IMG_8286_bn8v0h.png",
+      "https://res.cloudinary.com/dxyuojydi/image/upload/v1737470338/peppermint_tea_2_uzqr4c.png",
   },
 ];
 
