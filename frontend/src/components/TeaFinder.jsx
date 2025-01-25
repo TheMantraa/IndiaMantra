@@ -1,10 +1,8 @@
 import React, { useState } from "react";
-import { DndProvider, useDrag, useDrop } from "react-dnd";
-import { MultiBackend } from "react-dnd-multi-backend";
-import { HTML5toTouch } from "rdndmb-html5-to-touch";
 import { FaAmazon } from "react-icons/fa";
 import axios from "axios";
 
+// Define the constants here
 const healthConcerns = [
   "Relax and Unwind",
   "Improve Digestion",
@@ -36,7 +34,7 @@ const flavorsMapping = {
   "Tangy and Zesty": ["Minty"],
   "Sweet and Juicy": ["Fruity"],
   "Bold and Warming": ["Spicy"],
-  "Soft and Aromatic": ["Fruity", "Spicy"],
+  "Soft and Aromatic": ["Fruity"],
 };
 
 const teaTypes = ["Black Tea", "Herbal Tea", "Green Tea"];
@@ -149,39 +147,49 @@ const TeaFinder = () => {
     email: "",
   });
 
-  const nextStep = () => setStep((prev) => Math.min(prev + 1, 5));
-  const prevStep = () => setStep((prev) => Math.max(prev - 1, 1));
+  const nextStep = () => {
+    if (step < 5) {
+      setStep((prev) => prev + 1);
+    }
+  };
+
+  const prevStep = () => {
+    if (step > 1) {
+      setStep((prev) => prev - 1);
+    }
+  };
 
   return (
     <div className="relative py-8">
+      {/* Background Image with Light Overlay */}
+      <div className="absolute inset-0 w-full h-full bg-black opacity-30 z-[-5]" />
       <img
-        src="https://res.cloudinary.com/dxyuojydi/image/upload/v1736932411/pexels-quang-nguyen-vinh-222549-11669663_mqjcoe.jpg"
-        alt=""
+        src="bg.jpg"
+        alt="Background"
         className="absolute inset-0 w-full h-full object-cover z-[-10]"
       />
-      <DndProvider backend={MultiBackend} options={HTML5toTouch}>
-        <div className="relative z-10 p-1 flex flex-col items-center text-center">
-          <h1 className="text-4xl font-extrabold mb-6 text-[#4f2432] baskervville-regular">
-            Play-and-Discover your perfect tea
-          </h1>
-          <p className="text-[#4f2432] mb-4 text-lg font-extrabold baskervville-regular">
-            Step {step} of 5
-          </p>
 
-          <StepContent
-            step={step}
-            selection={selection}
-            setSelection={setSelection}
-            nextStep={nextStep}
-            prevStep={prevStep}
-            healthConcerns={healthConcerns}
-            flavors={flavors}
-            teaTypes={teaTypes}
-          />
+      <div className="relative z-10 p-1 flex flex-col items-center text-center">
+        <h1 className="text-4xl font-extrabold mb-6 text-[#eeebe9] baskervville-regular">
+          Play-and-Discover your Perfect Cup!
+        </h1>
+        <p className="text-[#eeebe9] mb-4 text-lg font-extrabold baskervville-regular">
+          {/* Step {step} of 5 */}
+        </p>
 
-          {step === 5 && <TeaResult selection={selection} teas={teas} />}
-        </div>
-      </DndProvider>
+        <StepContent
+          step={step}
+          selection={selection}
+          setSelection={setSelection}
+          nextStep={nextStep}
+          prevStep={prevStep}
+          healthConcerns={healthConcerns}
+          flavors={flavors}
+          teaTypes={teaTypes}
+        />
+
+        {step === 5 && <TeaResult selection={selection} teas={teas} />}
+      </div>
     </div>
   );
 };
@@ -197,21 +205,21 @@ const StepContent = ({
   teaTypes,
 }) => {
   const questions = [
-    "Drag & drop your tea goal in cup!",
-    "Pick Your Favorite Flavor\nWhat kind of taste do you enjoy in your tea?",
-    "Choose Your Tea Type\nWhat’s your tea base of choice?",
-    "Enter Your Email to Unlock More Benefits\nTo reveal your tea match and receive updates, enter your email.",
-    "Meet Your Perfect Tea Match\nGet personalized tea picks with benefits, a unique touch, and more.",
+    "Select your Tea Goal!",
+    "Pick Your Flavor\n",
+    "Choose Your Tea Type\n",
+    "\nTo reveal your tea match\nEnter your email.",
+    " With Mantra\nget personalized tea picks, benefits, a unique touch, and more",
   ];
 
   const options =
     step === 1
       ? healthConcerns
       : step === 2
-      ? flavors
-      : step === 3
-      ? teaTypes
-      : [];
+        ? flavors
+        : step === 3
+          ? teaTypes
+          : [];
 
   const handleDrop = (item) => {
     if (step === 1 && !selection.health.includes(item)) {
@@ -219,25 +227,25 @@ const StepContent = ({
         ...prev,
         health: [...prev.health, healthConcernMapping[item]],
       }));
-      nextStep();
+      nextStep(); // Trigger next step after a valid drop
     } else if (step === 2 && !selection.flavors.includes(item)) {
       setSelection((prev) => ({
         ...prev,
         flavors: [...prev.flavors, ...flavorsMapping[item]],
       }));
-      nextStep();
+      nextStep(); // Trigger next step after a valid drop
     } else if (step === 3 && !selection.teaType.includes(item)) {
       setSelection((prev) => ({
         ...prev,
         teaType: [...prev.teaType, teaTypesMapping[item]],
       }));
-      nextStep();
+      nextStep(); // Trigger next step after a valid drop
     }
   };
 
   return (
     <div className="w-full max-w-4xl">
-      <h2 className="text-xl font-bold mb-4 text-[#4f2432] baskervville-regular">
+      <h2 className="text-xl font-bold mb-18 text-[#eeebe9] baskervville-regular">
         {questions[step - 1].split("\n").map((line, index) => (
           <React.Fragment key={index}>
             {line}
@@ -250,20 +258,24 @@ const StepContent = ({
         <>
           <div className="flex flex-wrap gap-4 justify-center mt-4">
             {options.map((option) => (
-              <Draggable key={option} item={option}>
+              <div
+                key={option}
+                className="bg-[#4f2432] p-2 rounded shadow cursor-pointer hover:bg-[#765460] text-white"
+                onClick={() => handleDrop(option)} // Trigger drop on click
+              >
                 {option}
-              </Draggable>
+              </div>
             ))}
           </div>
+          <div className="flex flex-col items-center">
+            <img
+              src="https://res.cloudinary.com/dxyuojydi/image/upload/v1736933970/Untitled_design__26_-removebg-preview_i5ly0a.png"
+              alt="Tea Cup"
+              className="w-[20rem] h-[20rem] object-contain"
+            />
+          </div>
 
-          <Droppable onDrop={handleDrop}>
-            <div className="flex flex-col items-center">
-              <img
-                src="https://res.cloudinary.com/dxyuojydi/image/upload/v1736933970/Untitled_design__26_-removebg-preview_i5ly0a.png"
-                alt=""
-              />
-            </div>
-          </Droppable>
+
         </>
       )}
 
@@ -280,23 +292,32 @@ const StepContent = ({
           />
           <button
             onClick={nextStep}
-            className="mt-4 text-white bg-[#765460] hover:bg-[#3C0C1C] px-4 py-2 rounded shadow"
+            className="mt-4 mx -3 text-white bg-[#3C0C1C] hover:bg-[#765460] px-4 py-2 rounded shadow"
           >
             Next
+          </button>
+          <button
+            onClick={nextStep}
+            className="mt-4 mx-3 text-white bg-[#3C0C1C] hover:bg-[#765460] px-4 py-2 rounded shadow"
+          >
+            Skip
           </button>
         </div>
       )}
 
-      <div className="my-8 flex justify-between">
-        {step > 1 && step < 5 && (
+      <div className=" flex justify-between">
+        {step > 1 && step < 6 && (
           <button
             onClick={prevStep}
-            className="text-white bg-[#765460] hover:bg-[#3C0C1C] px-4 py-2 rounded shadow"
+            className="text-white bg-[#3C0C1C] hover:bg-[#765460] px-4 py-2 rounded shadow"
           >
             Previous
           </button>
         )}
       </div>
+
+
+
     </div>
   );
 };
@@ -333,10 +354,11 @@ const TeaResult = ({ selection, teas }) => {
   if (selection.email && matchingTeas.length > 0) {
     sendEmail(selection.email, matchingTeas[0].imgUrl, matchingTeas[0].buyUrl);
   }
+
   return (
     <div className="my- text-center baskervville-regular ">
-      <h2 className="text-3xl font-extrabold text-[#4f2432] mb-1 baskervville-regular">
-        YOUR PERFECT TEA
+      <h2 className="text-3xl font-extrabold text-[#eeebe9] mb-1 baskervville-regular">
+        Your Perfect Cup
       </h2>
       {matchingTeas.length > 0 ? (
         matchingTeas.slice(0, 1).map((tea) => (
@@ -348,9 +370,7 @@ const TeaResult = ({ selection, teas }) => {
               {tea.name}
             </h3>
 
-            <p className="text-white mb-1">
-              <span className="font-bold text-2xl"></span> {tea.tagline}
-            </p>
+            <p className="text-white mb-1">{tea.tagline}</p>
             <a
               href={tea.buyUrl}
               target="_blank"
@@ -366,35 +386,6 @@ const TeaResult = ({ selection, teas }) => {
           No matches found. Try other preferences.
         </p>
       )}
-    </div>
-  );
-};
-
-const Draggable = ({ item, children }) => {
-  const [, dragRef] = useDrag({
-    type: "ITEM",
-    item: { name: item },
-  });
-
-  return (
-    <div
-      ref={dragRef}
-      className="bg-[#765460] p-2 rounded shadow cursor-grab hover:bg-[#4f2432] text-white"
-    >
-      {children}
-    </div>
-  );
-};
-
-const Droppable = ({ onDrop, children }) => {
-  const [, dropRef] = useDrop({
-    accept: "ITEM",
-    drop: (item) => onDrop(item.name),
-  });
-
-  return (
-    <div ref={dropRef} className="relative w-full h-full">
-      {children}
     </div>
   );
 };
