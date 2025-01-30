@@ -211,7 +211,7 @@ const ProductDetails = () => {
 
             <div className="flex items-center space-x-2">
               <span className="text-sm lg:text-xl font-medium text-gray-500">
-                ${product.price}
+                Rs {product.price}
               </span>
               {/* <span className="text-sm lg:text-xl font-semibold text-gray-800">
                 ${(product.price - product.price * 0.2).toFixed(0)}

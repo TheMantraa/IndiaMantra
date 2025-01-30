@@ -68,7 +68,7 @@ const Bestsellers = () => {
               <h3 className="text-lg font-medium text-[#383838] mb-1">
                 {product.name.slice(0, 25)}
               </h3>
-              <p className="text-sm text-[#383838] mb-4">$ {product.price}</p>
+              <p className="text-sm text-[#383838] mb-4">Rs {product.price}</p>
               <button
                 className="w-full bg-[#3C0C1C] text-sm font-medium  text-white  border border-[#383838] rounded-lg py-2 hover:bg-[#623c49] hover:text-white"
                 onClick={() => {
