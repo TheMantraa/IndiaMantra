@@ -50,7 +50,7 @@ const Home = () => {
 
       <Videointro />
 
-      <TeaFinder />
+      {/* <TeaFinder /> */}
       <Bestsellers />
       {/* <Categories /> */}
       <KnowRecipes />
