@@ -30,7 +30,7 @@ const TestimonialCarousel = () => {
               </p>
               <span className="inline-block h-1 w-10 rounded bg-[#3C0C1C] mt-4 mb-4"></span>
               <h2 className="text-black font-semibold text-lg">
-                Amit Kumar
+                Amit Kumar Malhotra
               </h2>
             </div>
           </div>
