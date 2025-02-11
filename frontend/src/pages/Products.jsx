@@ -55,6 +55,15 @@ const Products = () => {
           All
         </button>
         <button
+          className={`px-4 py-2 mx-2 rounded-full text-sm font-semibold transition ${filter === "MilkTea"
+            ? "bg-[#623c49] text-white"
+            : "bg-[#a07584] text-white hover:bg-[#765460]"
+            }`}
+          onClick={() => setFilter("MilkTea")}
+        >
+          Milk Tea
+        </button>
+        <button
           className={`px-4 py-2 mx-2 rounded-full text-sm font-semibold transition ${filter === "HerbalTea"
             ? "bg-[#623c49] text-white"
             : "bg-[#a07584] text-white hover:bg-[#765460]"
@@ -81,6 +90,7 @@ const Products = () => {
         >
           Black Tea
         </button>
+
       </div>
 
       {loading ? (

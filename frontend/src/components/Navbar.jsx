@@ -62,6 +62,14 @@ const Navbar = () => {
                 </button>
                 <button
                   onClick={() =>
+                    handleCategorySelect("/productscategory/MilkTea")
+                  }
+                  className="block px-4 py-3 text-sm font-semibold text-[#ddd8d2] hover:text-[#bbb1a6] transition-all uppercase tracking-wide text-lg"
+                >
+                  Milk Tea
+                </button>
+                <button
+                  onClick={() =>
                     handleCategorySelect("/productscategory/GreenTea")
                   }
                   className="block px-4 py-3 text-sm font-semibold text-[#ddd8d2] hover:text-[#bbb1a6] transition-all uppercase tracking-wide text-lg"

@@ -52,7 +52,7 @@ const Home = () => {
 
       <TeaFinder />
       <Bestsellers />
-      <Categories />
+      {/* <Categories /> */}
       <KnowRecipes />
       <WhyUs />
       <KnowProduct />
