@@ -11,12 +11,19 @@ const Blogs = () => {
     axios
       .get(`${process.env.REACT_APP_BACKEND_URL}/blogs/all`)
       .then((response) => {
-        setNewsItems(response.data);
+        const sortedBlogs = response.data
+          .slice() // Create a copy before sorting
+          .filter((item) => item.date) // Ensure the date exists
+          .sort((a, b) => new Date(b.date) - new Date(a.date));
+
+        setNewsItems(sortedBlogs);
       })
       .catch((error) => {
         console.error("Error fetching news:", error);
       });
   }, []);
+
+
 
   const handleBlogClick = (id) => {
     navigate(`/blogs/${id}`); // Navigate to the blog details page

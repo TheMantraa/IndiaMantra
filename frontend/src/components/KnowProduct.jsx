@@ -18,13 +18,21 @@ const KnowProduct = () => {
           throw new Error("Backend URL is not defined");
         }
         const response = await axios.get(`${backendUrl}/blogs/all`);
-        setBlogs(response.data);
+
+        // Ensure sorting is based on 'date' or 'createdAt' field
+        const sortedBlogs = response.data
+          .slice() // Copy the array to avoid mutation
+          .filter((item) => item.date) // Ensure the date field exists
+          .sort((a, b) => new Date(b.date) - new Date(a.date)); // Sort in descending order
+
+        setBlogs(sortedBlogs);
       } catch (err) {
         setError(err.message || "An error occurred while fetching blogs.");
       } finally {
         setLoading(false);
       }
     };
+
     fetchBlogs();
   }, []);
 
