@@ -451,7 +451,7 @@ const ProductDetails = () => {
                     <img
                       alt="testimonial"
                       className="w-20 h-20 mb-4 object-cover object-center rounded-full inline-block border-2 border-gray-300"
-                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGL6QeARVpiAQDOkK3RA3bgEXV-a06j2FplA&s"
+                      src="https://res.cloudinary.com/dxyuojydi/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1739276120/WhatsApp_Image_2025-02-11_at_17.44.58_48e9dbc0_gtcv8l.jpg"
                     />
                     <div className="flex justify-center mb-2">
                       <FaStar className="text-[#623c49]" />
@@ -461,13 +461,12 @@ const ProductDetails = () => {
                       <FaStar className="text-slate-200" />
                     </div>
                     <p className="leading-relaxed text-[#3C0C1C] font-semibold text-md italic">
-                      "Mantra Herbal Tea is now part of my daily routine. It's
-                      soothing, refreshing, and perfect for unwinding after a busy
-                      day."
+                      "When I travel, I miss my milk tea, so instant masala chai premix is a lifesaver. It only takes a minute to make and tastes the same.
+                      "
                     </p>
                     <span className="inline-block h-1 w-10 rounded bg-[#3C0C1C] mt-4 mb-4"></span>
                     <h2 className="text-black font-semibold text-lg">
-                      Sophia Bennett
+                      Amit Kumar
                     </h2>
                   </div>
                 </div>
@@ -477,7 +476,7 @@ const ProductDetails = () => {
                     <img
                       alt="testimonial"
                       className="w-20 h-20 mb-4 object-cover object-center rounded-full inline-block border-2 border-gray-300"
-                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTU53EcOIyxE7pOZJBvGHJGbDk39EYxvOhbdw&s"
+                      src="https://res.cloudinary.com/dxyuojydi/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1739275766/WhatsApp_Image_2025-02-11_at_17.38.52_053a4b1e_e3e879.jpg"
                     />
                     <div className="flex justify-center mb-2">
                       <FaStar className="text-[#623c49]" />
@@ -487,12 +486,11 @@ const ProductDetails = () => {
                       <FaStar className="text-[#623c49]" />
                     </div>
                     <p className="leading-relaxed text-[#3C0C1C] font-semibold text-md italic">
-                      "The taste and quality are outstanding. Mantra has shown me what
-                      real herbal tea should be like!"
+                      "The quality of this tea is amazing—fresh, fragrant, and full of flavor. You can really taste the difference compared to regular store-bought teas. "
                     </p>
                     <span className="inline-block h-1 w-10 rounded bg-[#3C0C1C] mt-4 mb-4"></span>
                     <h2 className="text-black font-semibold text-lg">
-                      James Peterson
+                      Payal Bedi
                     </h2>
                   </div>
                 </div>
@@ -502,7 +500,7 @@ const ProductDetails = () => {
                     <img
                       alt="testimonial"
                       className="w-20 h-20 mb-4 object-cover object-center rounded-full inline-block border-2 border-gray-300"
-                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmQoGkzpdV8STUOwoWdKv4rz2mMp_C75G_RQ&s"
+                      src="https://res.cloudinary.com/dxyuojydi/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1739264552/WhatsApp_Image_2025-02-11_at_14.32.02_2d34acbe_lcjkbh.jpg"
                     />
                     <div className="flex justify-center mb-2">
                       <FaStar className="text-[#623c49]" />
@@ -512,13 +510,11 @@ const ProductDetails = () => {
                       <FaStar className="text-slate-200" />
                     </div>
                     <p className="leading-relaxed text-[#3C0C1C] font-semibold text-md italic">
-                      "Mantra tea combines the goodness of Indian herbs in a way that
-                      feels Tasty and refreshing. It’s my go-to for a calm and
-                      relaxing moment."
+                      "The tea is really fresh, and the ingredients taste premium. You can tell it’s made with care. Will definitely buy again!"
                     </p>
                     <span className="inline-block h-1 w-10 rounded bg-[#3C0C1C] mt-4 mb-4"></span>
                     <h2 className="text-black font-semibold text-lg">
-                      Olivia Brooks
+                      Sudesh Malhotra
                     </h2>
                   </div>
                 </div>
