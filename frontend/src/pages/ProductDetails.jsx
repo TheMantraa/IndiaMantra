@@ -448,11 +448,11 @@ const ProductDetails = () => {
                 {/* Testimonial 1 */}
                 <div className="lg:w-1/3 md:w-1/2 sm:w-full p-4">
                   <div className="h-full bg-[#BBB1A6] shadow-md rounded-lg p-6 text-center">
-                    <img
+                    {/* <img
                       alt="testimonial"
                       className="w-20 h-20 mb-4 object-cover object-center rounded-full inline-block border-2 border-gray-300"
                       src="https://res.cloudinary.com/dxyuojydi/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1739276120/WhatsApp_Image_2025-02-11_at_17.44.58_48e9dbc0_gtcv8l.jpg"
-                    />
+                    /> */}
                     <div className="flex justify-center mb-2">
                       <FaStar className="text-[#623c49]" />
                       <FaStar className="text-[#623c49]" />
@@ -473,11 +473,11 @@ const ProductDetails = () => {
                 {/* Testimonial 2 */}
                 <div className="lg:w-1/3 md:w-1/2 sm:w-full p-4">
                   <div className="h-full bg-[#BBB1A6] shadow-md rounded-lg p-6 text-center">
-                    <img
+                    {/* <img
                       alt="testimonial"
                       className="w-20 h-20 mb-4 object-cover object-center rounded-full inline-block border-2 border-gray-300"
                       src="https://res.cloudinary.com/dxyuojydi/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1739275766/WhatsApp_Image_2025-02-11_at_17.38.52_053a4b1e_e3e879.jpg"
-                    />
+                    /> */}
                     <div className="flex justify-center mb-2">
                       <FaStar className="text-[#623c49]" />
                       <FaStar className="text-[#623c49]" />
@@ -497,11 +497,11 @@ const ProductDetails = () => {
                 {/* Testimonial 3 */}
                 <div className="lg:w-1/3 md:w-1/2 sm:w-full p-4">
                   <div className="h-full bg-[#BBB1A6] shadow-md rounded-lg p-6 text-center">
-                    <img
+                    {/* <img
                       alt="testimonial"
                       className="w-20 h-20 mb-4 object-cover object-center rounded-full inline-block border-2 border-gray-300"
                       src="https://res.cloudinary.com/dxyuojydi/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1739264552/WhatsApp_Image_2025-02-11_at_14.32.02_2d34acbe_lcjkbh.jpg"
-                    />
+                    /> */}
                     <div className="flex justify-center mb-2">
                       <FaStar className="text-[#623c49]" />
                       <FaStar className="text-[#623c49]" />
